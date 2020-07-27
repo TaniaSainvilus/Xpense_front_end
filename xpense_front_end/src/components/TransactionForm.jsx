@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class TransactionForm extends Component {
     render() {
         return (
-            <form onSubmit={(event) => {this.props.handleSubmit(event)}}>
+            <form onSubmit={(event) => {this.props.handleNewTransaction(event)}}>
                 <label htmlFor="date">Date: 
                     <input
                         onChange={(event) => this.props.handleChange(event)}

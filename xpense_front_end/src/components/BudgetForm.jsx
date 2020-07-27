@@ -17,8 +17,7 @@ export default class NewForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        
-        fetch(this.props.baseUrl + '/', {
+        fetch(this.props.baseUrl + "budgets", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,16 +33,6 @@ export default class NewForm extends Component {
                 title: '',
             });
         });
-        // axios.post(this.props.baseUrl + '/',{
-        //          title: this.state.title
-        // }).then(res => {
-        //     return res.json();
-        // }).then(data => {
-        //     this.props.addBudget(data);
-        //     this.setState({
-        //         title: '',
-        //     });
-        // });
     }
 
     render() {
@@ -54,6 +43,7 @@ export default class NewForm extends Component {
                     onChange={ (evt) => this.handleChange(evt) }
                     value={ this.state.title }/>
                 <input type="submit" value="Add Budget Category"/>
+                <button onClick={() => this.props.toggleBudgetForm()}>Cancel</button>
             </form>
         )
     }

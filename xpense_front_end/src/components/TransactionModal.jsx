@@ -9,6 +9,7 @@ export default class TransactionModal extends Component {
                         <th>Date</th>
                         <th>Payee</th>
                         <th>Spent</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +18,7 @@ export default class TransactionModal extends Component {
                             <td>{transaction.date}</td>
                             <td>{transaction.payee}</td>
                             <td>{transaction.spent}</td>
+                            <td onClick={(event) => this.props.deleteTransaction(event, index, this.props.budget.title)}>X</td>
                         </tr>
                     )
                     })}
