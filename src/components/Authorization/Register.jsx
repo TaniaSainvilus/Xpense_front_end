@@ -18,6 +18,7 @@ export default function Register(props) {
         event.preventDefault()
         
         try {
+<<<<<<< HEAD
         const newUser = { email, username, password, passwordCheck }
         await Axios.post(props.baseUrl + "/user/register",newUser)
         const loginRes = await Axios.post(props.baseUrl + "/user/login", { email, 
@@ -33,15 +34,37 @@ export default function Register(props) {
     } catch (err) {
         console.log(err)
       err.response.data.msg && setError(err.response.data.msg)
+=======
+            const newUser = { email, username, password, passwordCheck }
+            await Axios.post(props.baseUrl + "/user/register", newUser)
+            const loginRes = await Axios.post(props.baseUrl + "/user/login", {
+                email, 
+                password,
+            })
+            setUserData({
+                token: loginRes.data.token,
+                user: loginRes.data.user
+            })
+            localStorage.setItem("auth-token", loginRes.data.token)
+            history.push('/')
+        } catch (err) {
+            console.log("Something broke in the register jsx")
+            err.response.data.msg && setError(err.response.data.msg)
+        }
+>>>>>>> 479a00be2333e4dda1b7f4f3ea59d662b8766409
     }
-}
     return (
         <div className="page">
             <h2>Register</h2>
             {error && (
         <ErrorMsg message={error} clearError={() => setError(undefined)} />
+<<<<<<< HEAD
       )}
             <form className="form-auth" onSubmit={submit}>
+=======
+        )}
+            <form className="form" onSubmit={submit}>
+>>>>>>> 479a00be2333e4dda1b7f4f3ea59d662b8766409
             <label htmlFor="register-email">Email</label>
             <input 
             id="register-email" 

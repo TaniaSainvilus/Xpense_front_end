@@ -16,18 +16,17 @@ export default function Login(props) {
         event.preventDefault()
         try {
         const loginUser = { email, password }
-        const loginRes = await Axios.post(props.baseUrl + "/user/login", loginUser
-    )
-    setUserData({
-        token: loginRes.data.token,
-        user: loginRes.data.user,
-    })
-    localStorage.setItem("auth-token", loginRes.data.token)
-    history.push('/')
-        } catch (err) {
-            err.response.data.msg && setError(err.response.data.msg)
-        }
-}
+        const loginRes = await Axios.post(props.baseUrl + "/user/login", loginUser)
+        setUserData({
+            token: loginRes.data.token,
+            user: loginRes.data.user,
+        })
+        localStorage.setItem("auth-token", loginRes.data.token)
+        history.push('/')
+            } catch (err) {
+                err.response.data.msg && setError(err.response.data.msg)
+            }
+    }
     return (
         <div className="page">
             <h2>Login</h2>
