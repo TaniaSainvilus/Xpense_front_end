@@ -55,3 +55,4 @@ export default function Login() {
     )
 }
 
+//worked through MERN auth tutorial on https://www.youtube.com/channel/UCQc5VXhS_wHKZL6oIK3moPA and https://github.com/jgbijlsma/mern-auth-template-front

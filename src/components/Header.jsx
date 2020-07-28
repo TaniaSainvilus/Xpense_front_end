@@ -10,7 +10,6 @@ class Header extends Component {
       <Link to ="/">
         <h1 className="title">Xpense</h1>
       </Link>
-    {/* <h2>Welcome {setUsername}</h2> */}
       <AuthOptions />
       </header>
     )
