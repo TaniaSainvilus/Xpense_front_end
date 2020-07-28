@@ -1,12 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 table {
   table-layout: fixed;
 }
+
+form {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 input {
   max-width: 150px;
 }
 
 th {
   background-color: steelblue;
+  text-align: center;
+  padding: 8px;
+
+}
+tr:hover {
+  background-color: rgb(208,220,227);
+}
+td {
+  text-align: center;
+  padding: 8px;
+}
+.td-number {
+  text-align: right;
+  padding: 0;
+  padding: 5px 10px;
+}
+.td-spent {
+  color: steelblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.td-delete {
+  cursor: pointer;
+}
+.td-spent table {
+  color: black;
+  text-decoration: none;
+  margin: 12px 0 0 0;
+  width: 525%;
+  transform: translate(-41%);
+  cursor: default;
 }
 
 .tr-even {
@@ -15,24 +54,13 @@ th {
 
 .tr-odd {
   background-color: rgb(161, 184, 199);
+  
 }
 #budget {
   float: right;
 }
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* Authentication, Transaction form, Header, everything except the budget table... */
 
 * {
   margin: 0;
