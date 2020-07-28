@@ -17,7 +17,7 @@ export default class NewForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch(this.props.baseUrl + "budgets", {
+        fetch(this.props.baseUrl + "/budgets", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

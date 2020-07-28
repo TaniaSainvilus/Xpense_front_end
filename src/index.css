@@ -1,0 +1,21 @@
+table {
+  table-layout: fixed;
+}
+input {
+  max-width: 150px;
+}
+
+th {
+  background-color: steelblue;
+}
+
+.tr-even {
+  background-color: white;
+}
+
+.tr-odd {
+  background-color: rgb(161, 184, 199);
+}
+#budget {
+  float: right;
+}

@@ -14,12 +14,12 @@ class BudgetInput extends Component {
     render() {
         return (
             <input 
-                className="budget-input"
-                type="number" id="budget"
+                className="budget-input form-control input-sm text-right"
+                type="number" id="budget" 
                 min="0"
                 value={this.state.budget}
                 onChange={(evt) => this.handleChange(evt)}
-                onBlur={(evt) => this.props.handleBudgetValueChange(evt, this.props.budget._id, this.props.index)}
+                onBlur={(evt) => this.props.handleBudgetValueChange(evt, this.props.budget._id, this.state.budget)}
             />
         )
     }

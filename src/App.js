@@ -4,18 +4,17 @@ import BudgetForm from './components/BudgetForm'
 import BudgetTable from './components/BudgetTable'
 import TransactionForm from './components/TransactionForm';
 import Header from "./components/Header"
+import { BrowserRouter } from 'react-router-dom';
 
 
 
-
-const baseUrl = 'http://localhost:3003/';
 //TODO setup env file for front end
-// let baseUrl;
-// if (process.env.NODE_ENV === 'development') {
-//   baseUrl = 'http://localhost:3000';
-// } else {
-//   baseUrl = 'https://peaceful-stream-27012.herokuapp.com';
-// }
+let baseUrl;
+if (process.env.NODE_ENV === 'development') {
+  baseUrl = 'http://localhost:3003';
+} else {
+  baseUrl = 'https://quiet-retreat-43031.herokuapp.com/';
+}
 console.log('current base URL:', baseUrl);
 
 //note: ran into error, had to hard code seed data- Tania 
@@ -23,7 +22,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      budget: [{
+      budget:   [{
         title: "Gas",
         budget: 10,
         spent: 6,
@@ -69,13 +68,14 @@ class App extends React.Component {
       payee: "",
       category: "",
       spent: 0,
+      budgetValue: 0,
       budgetFormOn: false,
       transactionFormOn: false,
     }
   }
 
   getBudget = () => {
-    fetch(baseUrl + 'budgets').then(res => {
+    fetch(baseUrl + '/budgets').then(res => {
       // console.log(baseUrl)
       return res.json();
     }).then(data => {
@@ -106,7 +106,7 @@ class App extends React.Component {
 
   handleNewTransaction = (event) => {
     event.preventDefault();
-    fetch(baseUrl + "budgets/" + this.state.category, {
+    fetch(baseUrl + "budgets/transaction/" + this.state.category, {
       method: "PUT",
       body: JSON.stringify({
         date: this.state.date,
@@ -134,12 +134,12 @@ class App extends React.Component {
     this.getBudget()
   }
 
-  handleBudgetValueChange = (event, id, index) => {
+  handleBudgetValueChange = (event, id, value) => {
     event.preventDefault();
     fetch(baseUrl + 'budgets/' + id, {
       method: 'PUT',
       body: JSON.stringify({
-        budget: this.state.budget[index].budget,
+        budget: value,
       }),
       headers: {
       'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ class App extends React.Component {
           budget: copyBudgets,
         });
       }).catch(error => console.error({"Error": error}))
-    this.getBudget()
+    this.getBudget();
   }
 
   toggleBudgetForm = () => {
@@ -209,6 +209,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home}/>
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>  */}
+      <div id='container'>
         <h1>Xpense App</h1>
         {this.state.budgetFormOn ? (
           <BudgetForm
@@ -234,16 +235,23 @@ class App extends React.Component {
           ) : (
             <button onClick={() => this.toggleTransactionForm()}>Add New Transaction</button>
           )}
-        {/* </Switch>
-        </BrowserRouter> */}
-        <BudgetTable
-          budget={this.state.budget}
-          baseUrl={baseUrl}
-          handleBudgetValueChange={this.handleBudgetValueChange}
-          deleteCategory={this.deleteCategory}
-          deleteTransaction={this.deleteTransaction}
-          />
-          </>
+        <div className="container">
+          <div className="panel-body">
+            <div className="responsive-table">
+            <BudgetTable
+              budget={this.state.budget}
+              baseUrl={baseUrl}
+              handleBudgetValueChange={this.handleBudgetValueChange}
+              deleteCategory={this.deleteCategory}
+              deleteTransaction={this.deleteTransaction}
+            />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* </Switch> */}
+      {/* <BrowserRouter/> */}
+      </>
     )
   }
 }
