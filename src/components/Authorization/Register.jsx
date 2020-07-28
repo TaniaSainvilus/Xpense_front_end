@@ -31,7 +31,7 @@ export default function Register(props) {
             localStorage.setItem("auth-token", loginRes.data.token)
             history.push('/')
         } catch (err) {
-            console.log(err)
+            console.log("Something broke in the register jsx")
             err.response.data.msg && setError(err.response.data.msg)
         }
     }
