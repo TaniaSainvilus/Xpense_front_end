@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import Login from "./Authorization/Login"
-import Register from "./Authorization/Register"
+import {Link} from 'react-router-dom'
+import AuthOptions from './Authorization/AuthOptions'
 
 class Header extends Component {
+
   render() {
     return (
       <header id="Header">
+      <Link to ="/">
         <h1 className="title">Xpense</h1>
-        <div className="buttons">
-        <Register />
-        <Login />
-        </div>
+      </Link>
+    {/* <h2>Welcome {setUsername}</h2> */}
+      <AuthOptions />
       </header>
     )
   }

@@ -12,6 +12,7 @@ code {
     monospace;
 } */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
   margin: 0;
@@ -20,12 +21,18 @@ code {
   font-family: 'Nanum Gothic', sans-serif;
 }
 
+a {
+  text-decoration: unset;
+  color: #49b5e7;
+}
+
 ul {
   margin-left: 1.5rem;
   list-style: none;
 }
 
 button, input[type="submit"] {
+  border: none;
   background: none;
   color: unset;
   cursor: pointer;
@@ -35,6 +42,29 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 1em 0; 
 }
 
+/* general */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.page {
+  padding: 1rem;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 900px;
+}
+
+.form-button {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #386980;
+  background-color: steelblue;
+  border-radius: 6px;
+  color: whitesmoke;
+  font-size: .9rem;
+}
 /* Header */
 
 #Header {
@@ -47,40 +77,103 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 
 #Header .title {
   margin: 0;
-  padding: 18px;
+  padding: 0 1rem;
   color: whitesmoke;
   font-family: 'Righteous', cursive;
   font-size: 50px;
   font-weight: 175;
 }
 
-#Header .buttons {
+#Header .authOptions {
+  height: 100%;
   display: flex;
-  height: 100%;
-  padding: 0px;
+}
+
+#Header .authOptions button {
+  padding: 0 1rem;
   background-color: slategrey;
+  color: whitesmoke;
+  font-size: 1.1rem;
 }
 
-#register {
+/* #register {
   height: 100%;
   border: none;
   padding: 10px;
   font-size: 1.2rem;
-}
+} */
 
-#register:hover {
+#Header .authOptions button:hover {
   background-color: rgb(191, 209, 226);
 }
 
-#login {
+/* #login {
   height: 100%;
   border: none;
   padding: 10px;
   font-size: 1.2rem;
+} */
+
+#Header .authOptions button:hover {
+  background-color: rgb(191, 209, 226);
 }
 
-#login:hover {
-  background-color: rgb(191, 209, 226);
+/* form */
+.form label, .form input {
+  display: block;
+}
+
+.form input {
+  margin-bottom: 1rem;
+}
+
+.form label {
+  margin-bottom: 0.2rem;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #a9bfc9;
+  border-radius: 6px;
+  background-color: #d2d9dc;
+  font-size: 1.1.rem;
+}
+
+.form input:focus {
+  border: 1px solid #49b5e7;
+  box-shadow: inset 0px 0px 5px #6aaac7;
+  outline: none;
+}
+
+.form input[type="submit"] {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #386980;
+  background-color: #4985a0;
+  border-radius: 6px;
+  color: whitesmoke;
+  font-size: 1.1rem;
+}
+
+/* error notice */
+.error-message {
+
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #e07c7c;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8d6d6;
+}
+.error-message button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #df4343;
+  color: #ffffff;
 }
 
 
