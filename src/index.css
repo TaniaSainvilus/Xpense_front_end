@@ -37,17 +37,12 @@ code {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 a {
   text-decoration: unset;
   color: #49b5e7;
-}
-
-ul {
-  margin-left: 1.5rem;
-  list-style: none;
 }
 
 button, input[type="submit"] {
@@ -71,18 +66,34 @@ body {
 }
 
 .container {
-  margin: 0px auto;
+  margin: 0 auto;
   max-width: 900px;
 }
 
 .form-button {
+  margin: 0.75px;
   padding: 0.3rem 0.5rem;
   border: 1px solid #386980;
   background-color: steelblue;
-  border-radius: 6px;
+  border-radius: 5px;
   color: whitesmoke;
   font-size: .9rem;
 }
+
+#submit-input {
+  margin: 0.75px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #386980;
+  background-color: steelblue;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-size: .9rem;
+}
+
+#login-redirect-link {
+  font-size: 2.2rem;
+}
+
 /* Header */
 
 #Header {
@@ -100,6 +111,7 @@ body {
   font-family: 'Righteous', cursive;
   font-size: 50px;
   font-weight: 175;
+  text-decoration: unset;
 }
 
 #Header .authOptions {
@@ -111,46 +123,37 @@ body {
   padding: 0 1rem;
   background-color: slategrey;
   color: whitesmoke;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
-
-/* #register {
-  height: 100%;
-  border: none;
-  padding: 10px;
-  font-size: 1.2rem;
-} */
 
 #Header .authOptions button:hover {
   background-color: rgb(191, 209, 226);
 }
 
-/* #login {
-  height: 100%;
-  border: none;
-  padding: 10px;
-  font-size: 1.2rem;
-} */
-
 #Header .authOptions button:hover {
   background-color: rgb(191, 209, 226);
 }
-
-/* form */
-.form label, .form input {
+/* transaction form */
+#transaction-form {
   display: block;
 }
+/* form */
+.form-auth label, .form-auth input {
+  display: block;
+  margin: 0px auto;
+  max-width: 900px;
+}
 
-.form input {
+.form-auth input {
   margin-bottom: 1rem;
 }
 
-.form label {
+.form-auth label {
   margin-bottom: 0.2rem;
 }
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"] {
+.form-auth input[type="text"],
+.form-auth input[type="email"],
+.form-auth input[type="password"] {
   width: 100%;
   padding: 0.3rem;
   border: 1px solid #a9bfc9;
@@ -159,25 +162,25 @@ body {
   font-size: 1.1.rem;
 }
 
-.form input:focus {
+.form-auth input:focus {
   border: 1px solid #49b5e7;
   box-shadow: inset 0px 0px 5px #6aaac7;
   outline: none;
 }
 
-.form input[type="submit"] {
+.form-auth input[type="submit"] {
   padding: 0.3rem 0.5rem;
   border: 1px solid #386980;
   background-color: #4985a0;
   border-radius: 6px;
   color: whitesmoke;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 /* error notice */
 .error-message {
-
-  margin: 1rem 0;
+  max-width: 900px;
+  margin: 1rem auto;
   padding: 0.5rem;
   border: 1px solid #e07c7c;
   border-radius: 8px;

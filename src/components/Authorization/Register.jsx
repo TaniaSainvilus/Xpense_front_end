@@ -32,7 +32,7 @@ export default function Register(props) {
 
     } catch (err) {
         console.log(err)
-        // err.response.data.msg && setError(err.response.data.msg)
+      err.response.data.msg && setError(err.response.data.msg)
     }
 }
     return (
@@ -41,7 +41,7 @@ export default function Register(props) {
             {error && (
         <ErrorMsg message={error} clearError={() => setError(undefined)} />
       )}
-            <form className="form" onSubmit={submit}>
+            <form className="form-auth" onSubmit={submit}>
             <label htmlFor="register-email">Email</label>
             <input 
             id="register-email" 

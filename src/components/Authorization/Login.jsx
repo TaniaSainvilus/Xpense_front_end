@@ -34,7 +34,7 @@ export default function Login(props) {
             {error && (
                 <ErrorMsg message={error} clearError={() => setError(undefined)} />
             )}
-            <form className="form" onSubmit={submit}>
+            <form className="form-auth" onSubmit={submit}>
             <label htmlFor="login-email">Email</label>
             <input 
             id="login-email" 

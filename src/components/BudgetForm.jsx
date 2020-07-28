@@ -37,13 +37,13 @@ export default class NewForm extends Component {
 
     render() {
         return (
-            <form onSubmit={ (evt) => this.handleSubmit(evt) }>
+            <form id="budget-forms" onSubmit={ (evt) => this.handleSubmit(evt) }>
                 <label htmlFor="title">Title: </label>
                 <input type="text" id="title"
                     onChange={ (evt) => this.handleChange(evt) }
-                    value={ this.state.title }/>
-                <input type="submit" value="Add Budget Category"/>
-                <button onClick={() => this.props.toggleBudgetForm()}>Cancel</button>
+                    value={ this.state.title }/><br/>
+                <input id="submit-input" type="submit" value="Add Budget Category"/><br/>
+                <button className="form-button" onClick={() => this.props.toggleBudgetForm()}>Cancel</button>
             </form>
         )
     }

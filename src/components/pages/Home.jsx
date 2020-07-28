@@ -16,7 +16,7 @@ export default function Home() {
             ) : (
                 <>
                 <h2>You are not logged in</h2>
-                <Link to="/login">Login</Link>
+                <Link id="login-redirect-link" to="/login">Login</Link>
                 </>
             )}
         </div>

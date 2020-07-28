@@ -157,8 +157,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='container'>
-        <h1>Xpense App</h1>
+      <div className='container'>
+        {/* <h1>Xpense App</h1> */}
         {this.state.budgetFormOn ? (
           <BudgetForm
             baseUrl={baseUrl}
@@ -166,7 +166,8 @@ class App extends React.Component {
             toggleBudgetForm={this.toggleBudgetForm}
           />
         ) : (
-          <button onClick={() => this.toggleBudgetForm()}>Add Budget Category</button>
+          <>
+          <button className="form-button" onClick={() => this.toggleBudgetForm()}>Add Budget Category</button><br/></>
         )}
         {this.state.transactionFormOn ? (
           <TransactionForm
@@ -181,7 +182,7 @@ class App extends React.Component {
             toggleTransactionForm={this.toggleTransactionForm}
           />
           ) : (
-            <button onClick={() => this.toggleTransactionForm()}>Add New Transaction</button>
+            <button className="form-button" onClick={() => this.toggleTransactionForm()}>Add New Transaction</button>
           )}
         <div className="container">
           <div className="panel-body">

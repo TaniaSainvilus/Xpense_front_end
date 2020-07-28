@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class TransactionForm extends Component {
     render() {
         return (
-            <form onSubmit={(event) => {this.props.handleNewTransaction(event)}}>
+            <form id="transaction-form" onSubmit={(event) => {this.props.handleNewTransaction(event)}}>
                 <label htmlFor="date">Date: 
                     <input
                         onChange={(event) => this.props.handleChange(event)}
@@ -12,10 +12,10 @@ export default class TransactionForm extends Component {
                         name="date"
                         value={this.props.date}
                     />
-                </label>
+                </label><br/>
                 <label htmlFor="payee">Payee: 
                     <input onChange={(event) => this.props.handleChange(event)} type="text" id="payee" name="payee" value={this.props.payee}/>
-                </label>
+                </label><br/>
                 <label htmlFor="category">Category: 
                     <select onChange={(event) => this.props.handleChange(event)} type="text" id="category" name="category" value={this.props.category}>
                         <option key="0" value="">Select one:</option>
@@ -23,11 +23,11 @@ export default class TransactionForm extends Component {
                             return <option key={index + 1} value={budget.title}>{budget.title}</option>
                         })}
                     </select>
-                </label>
+                </label><br/>
                 <label htmlFor="spent">Spent: 
                     <input onChange={(event) => this.props.handleChange(event)} type="number" id="spent" name="spent" value={this.props.spent}/>
-                </label>
-                <input type="submit" value="Add Transaction"/>
+                </label><br/>
+                <input id="submit-input" type="submit" value="Add Transaction"/><br/>
                 <button className="form-button" onClick={() => this.props.toggleTransactionForm()}>Cancel</button>
             </form>
         )
